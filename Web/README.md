@@ -1,1 +1,1 @@
-Hypo 팀 Web 파트입니다.
+Hyp 팀 Web 파트입니다.
