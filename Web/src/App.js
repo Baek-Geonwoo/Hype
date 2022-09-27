@@ -20,6 +20,8 @@ function App() {
   return (
     <div className="App">
       <Navbar bg="light" expand="lg">
+        {" "}
+        // Navigator(Header)
         <Container>
           <Navbar.Brand href="">
             <img
