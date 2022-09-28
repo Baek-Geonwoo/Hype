@@ -33,7 +33,7 @@ function Service() {
                     size="large"
                     shadow
                     rounded
-                    onClick={() => {
+                    onClick={(e) => {
                         navigate("/location");
                     }}
                 />
