@@ -1,9 +1,10 @@
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
 import Service from "./components/Service";
 import Header from "./components/Header";
 import Intro from "./components/Intro";
-import Input from "./components/Input";
-import Chart from "./components/Chart";
+import Location from "./components/Location";
+import Piegraph from "./components/Piegraph";
 import Map from "./components/Map";
 import Footer from "./components/Footer";
 import React from "react";
@@ -36,8 +37,8 @@ export default App;
   <Route path="/" element={<Service />}></Route>
   <Route path="/intro" element={<Intro />}></Route>
   <Route path="/service" element={<Service />}></Route>
-  <Route path="/input" element={<Input />}></Route>
-  <Route path="/chart" element={<Chart />}></Route>
+  <Route path="/location" element={<Location />}></Route>
+  <Route path="/piegraph" element={<Piegraph />}></Route>
   <Route path="/map" element={<Map />}></Route>
 
   <Route path="*" element={<div>404</div>}></Route>

@@ -2,7 +2,7 @@ import React from "react";
 import ReactiveButton from "reactive-button";
 import { useNavigate, Outlet } from "react-router-dom";
 
-function Input() {
+function Location() {
     let navigate = useNavigate();
   
     return (
@@ -25,4 +25,4 @@ function Input() {
     );
 }
 
-export default Input;
+export default Location;

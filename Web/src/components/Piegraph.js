@@ -2,7 +2,7 @@ import React from "react";
 import ReactiveButton from "reactive-button";
 import { useNavigate } from "react-router-dom";
 
-function Chart() {
+function Piegraph() {
     let navigate = useNavigate();
   
     return (
@@ -24,4 +24,4 @@ function Chart() {
     );
 }
 
-export default Chart; 
+export default Piegraph; 
