@@ -5,72 +5,97 @@ import { ResponsivePie } from "@nivo/pie";
 
 const dataExample = [
   {
-    id: "php",
-    label: "php",
-    value: 287,
-    color: "hsl(297, 70%, 50%)",
+    id: "상권1",
+    label: "상권1",
+    value: 1.9,
+    color: "hsl(199, 70%, 50%)",
   },
   {
-    id: "haskell",
-    label: "haskell",
-    value: 336,
+    id: "상권2",
+    label: "상권2",
+    value: 28.8,
     color: "hsl(65, 70%, 50%)",
   },
   {
-    id: "lisp",
-    label: "lisp",
-    value: 182,
+    id: "상권3",
+    label: "상권3",
+    value: 17.3,
     color: "hsl(135, 70%, 50%)",
   },
   {
-    id: "sass",
-    label: "sass",
-    value: 50,
+    id: "상권4",
+    label: "상권4",
+    value: 13.5,
     color: "hsl(43, 70%, 50%)",
   },
   {
-    id: "go",
-    label: "go",
-    value: 247,
+    id: "상권5",
+    label: "상권5",
+    value: 9.6,
+    color: "hsl(199, 70%, 50%)",
+  },
+  {
+    id: "상권6",
+    label: "상권5",
+    value: 5.8,
+    color: "hsl(199, 70%, 50%)",
+  },
+  {
+    id: "상권7",
+    label: "상권5",
+    value: 23.1,
     color: "hsl(199, 70%, 50%)",
   },
 ];
 
+function Piegraph() {
+  let navigate = useNavigate();
+
+  return (
+    <>
+      <div style={{ height: 500 }}>
+        <MyResponsivePie />
+      </div>
+      <div>
+        <ReactiveButton
+          idleText="다음으로"
+          loadingText="Loading"
+          successText="Done"
+          color="blue"
+          size="large"
+          shadow
+          rounded
+          onClick={() => {
+            navigate("/map");
+          }}
+        />
+      </div>
+    </>
+  );
+}
+
 const MyResponsivePie = ({ data /* see data tab */ }) => (
   <ResponsivePie
     data={dataExample}
-    margin={{
-      top: 40,
-      right: 80,
-      bottom: 80,
-      left: 80,
-    }}
-    innerRadius={0.5}
-    padAngle={0.7}
-    cornerRadius={3}
-    colors={{
-      scheme: "nivo",
-    }}
+    margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+    startAngle={-70}
+    innerRadius={0.35}
+    activeOuterRadiusOffset={8}
+    colors={{ scheme: "set3" }}
     borderWidth={1}
     borderColor={{
       from: "color",
       modifiers: [["darker", 0.2]],
     }}
-    radialLabelsSkipAngle={10}
-    radialLabelsTextXOffset={6}
-    radialLabelsTextColor="#333333"
-    radialLabelsLinkOffset={0}
-    radialLabelsLinkDiagonalLength={16}
-    radialLabelsLinkHorizontalLength={24}
-    radialLabelsLinkStrokeWidth={1}
-    radialLabelsLinkColor={{
+    arcLinkLabelsSkipAngle={10}
+    arcLinkLabelsTextColor="#333333"
+    arcLinkLabelsThickness={2}
+    arcLinkLabelsColor={{ from: "color" }}
+    arcLabelsSkipAngle={10}
+    arcLabelsTextColor={{
       from: "color",
+      modifiers: [["darker", 2]],
     }}
-    slicesLabelsSkipAngle={10}
-    slicesLabelsTextColor="#333333"
-    animate={true}
-    motionStiffness={90}
-    motionDamping={15}
     defs={[
       {
         id: "dots",
@@ -91,64 +116,19 @@ const MyResponsivePie = ({ data /* see data tab */ }) => (
         spacing: 10,
       },
     ]}
-    fill={[
-      {
-        match: {
-          id: "ruby",
-        },
-        id: "dots",
-      },
-      {
-        match: {
-          id: "c",
-        },
-        id: "dots",
-      },
-      {
-        match: {
-          id: "go",
-        },
-        id: "dots",
-      },
-      {
-        match: {
-          id: "python",
-        },
-        id: "dots",
-      },
-      {
-        match: {
-          id: "scala",
-        },
-        id: "lines",
-      },
-      {
-        match: {
-          id: "lisp",
-        },
-        id: "lines",
-      },
-      {
-        match: {
-          id: "elixir",
-        },
-        id: "lines",
-      },
-      {
-        match: {
-          id: "javascript",
-        },
-        id: "lines",
-      },
-    ]}
     legends={[
       {
         anchor: "bottom",
         direction: "row",
+        justify: false,
+        translateX: 0,
         translateY: 56,
+        itemsSpacing: 0,
         itemWidth: 100,
         itemHeight: 18,
         itemTextColor: "#999",
+        itemDirection: "left-to-right",
+        itemOpacity: 1,
         symbolSize: 18,
         symbolShape: "circle",
         effects: [
@@ -163,32 +143,5 @@ const MyResponsivePie = ({ data /* see data tab */ }) => (
     ]}
   />
 );
-
-
-function Piegraph() {
-  let navigate = useNavigate();
-
-  return (
-    <>
-      <div style={{ height: 50 }}>
-        <MyResponsivePie data={dataExample} />
-      </div>
-      <div>
-        <ReactiveButton
-          idleText="다음으로"
-          loadingText="Loading"
-          successText="Done"
-          color="blue"
-          size="large"
-          shadow
-          rounded
-          onClick={() => {
-            navigate("/map");
-          }}
-        />
-      </div>
-    </>
-  );
-}
 
 export default Piegraph;
