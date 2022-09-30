@@ -20,9 +20,32 @@
 }
 
 
+
 body {
   margin: 0;
 }
+
+.inverted-border-radius {
+  padding: 5%;
+  font-size: var(--font-small);
+  height: 70px;
+  width: 270px;
+  margin-top: 50px;
+  background-color: #E7F2FF;
+  border-radius: 25px 25px 25px 0; 
+}
+
+.inner_box {
+  margin-right: 5px;
+  font-size: var(--font-small);
+  height: 20px;
+  width: 50px;
+  background-color: white;
+  border-radius: 25px 25px 25px 25px; 
+}
+
+
+
 
 .App-logo {
   height: 40vmin;

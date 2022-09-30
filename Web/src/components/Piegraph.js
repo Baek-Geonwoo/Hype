@@ -1,13 +1,17 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ReactiveButton from "reactive-button";
 import { useNavigate } from "react-router-dom";
 import { ResponsivePie } from "@nivo/pie";
+
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const dataExample = [
   {
     id: "상권1",
     label: "상권1",
-    value: 1.9,
+    value: 4.9,
     color: "hsl(199, 70%, 50%)",
   },
   {
@@ -53,22 +57,78 @@ function Piegraph() {
 
   return (
     <>
-      <div style={{ height: 500 }}>
-        <MyResponsivePie />
-      </div>
+      <Container>
+        <Row>
+          <Col>
+            <div style={{ width: 400, height: 400 }}>
+              <MyResponsivePie />
+            </div>
+          </Col>
+          <Col>
+            <div className="inverted-border-radius">
+              가장 높은 순위는 00.0%로 상권 1 이고, <br />
+              가장 낮은 순위는 00.0%로 상귄 5 입니다.
+            </div>
+            <div className="inverted-border-radius" style={{ height: 200 }}>
+              <h6>TOP 3</h6>
+              <br></br>
+              상권 1의 업종분야<br></br>
+              <Container>
+                <Row xs="auto">
+                  <div className="inner_box">업종분야</div>
+                  <div className="inner_box">업종분야</div>
+                  <div className="inner_box">업종분야</div>
+                </Row>
+              </Container>
+              상권 2의 업종분야<br></br>
+              <Container>
+                <Row xs="auto">
+                  <div className="inner_box">업종분야</div>
+                  <div className="inner_box">업종분야</div>
+                  <div className="inner_box">업종분야</div>
+                </Row>
+              </Container>
+              상권 3의 업종분야<br></br>
+              <Container>
+                <Row xs="auto">
+                  <div className="inner_box">업종분야</div>
+                  <div className="inner_box">업종분야</div>
+                  <div className="inner_box">업종분야</div>
+                </Row>
+              </Container>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+
       <div>
-        <ReactiveButton
-          idleText="다음으로"
-          loadingText="Loading"
-          successText="Done"
-          color="blue"
-          size="large"
-          shadow
-          rounded
-          onClick={() => {
-            navigate("/map");
-          }}
-        />
+        <Container>
+          <ReactiveButton
+            idleText="이전"
+            loadingText="Loading"
+            successText="Done"
+            color="blue"
+            size="large"
+            shadow
+            rounded
+            onClick={() => {
+              navigate("/location");
+            }}
+          />
+
+          <ReactiveButton
+            idleText="다음"
+            loadingText="Loading"
+            successText="Done"
+            color="blue"
+            size="large"
+            shadow
+            rounded
+            onClick={() => {
+              navigate("/map");
+            }}
+          />
+        </Container>
       </div>
     </>
   );
@@ -82,12 +142,13 @@ const MyResponsivePie = ({ data /* see data tab */ }) => (
     innerRadius={0.35}
     activeOuterRadiusOffset={8}
     colors={{ scheme: "set3" }}
-    borderWidth={1}
+    borderWidth={0}
     borderColor={{
       from: "color",
       modifiers: [["darker", 0.2]],
     }}
     arcLinkLabelsSkipAngle={10}
+    motionConfig={"wobbly"}
     arcLinkLabelsTextColor="#333333"
     arcLinkLabelsThickness={2}
     arcLinkLabelsColor={{ from: "color" }}
@@ -116,7 +177,7 @@ const MyResponsivePie = ({ data /* see data tab */ }) => (
         spacing: 10,
       },
     ]}
-    legends={[
+    /*legends={[
       {
         anchor: "bottom",
         direction: "row",
@@ -140,7 +201,7 @@ const MyResponsivePie = ({ data /* see data tab */ }) => (
           },
         ],
       },
-    ]}
+    ]}*/
   />
 );
 
