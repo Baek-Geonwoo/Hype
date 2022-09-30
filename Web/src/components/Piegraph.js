@@ -6,6 +6,7 @@ import { ResponsivePie } from "@nivo/pie";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+// import piedata from "../data/pie.json";
 
 const dataExample = [
   {
@@ -52,11 +53,12 @@ const dataExample = [
   },
 ];
 
-function Piegraph() {
+function Piegraph(props) {
   let navigate = useNavigate();
 
   return (
     <>
+      지역코드는 {props.location}
       <Container>
         <Row>
           <Col>
@@ -100,7 +102,6 @@ function Piegraph() {
           </Col>
         </Row>
       </Container>
-
       <div>
         <Container>
           <ReactiveButton
