@@ -164,6 +164,7 @@ const MyResponsivePie = ({ data /* see data tab */ }) => (
   />
 );
 
+
 function Piegraph() {
   let navigate = useNavigate();
 
