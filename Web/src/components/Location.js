@@ -4,13 +4,17 @@ import { useState } from "react";
 import { hangjungdong } from "./Hangjungdong";
 import { useNavigate, Outlet } from "react-router-dom";
 
-function Location() {
+function Location(props) {
     let navigate = useNavigate();
-  
+
     const [val1, setVal1] = useState("");
     const [val2, setVal2] = useState("");
     const [val3, setVal3] = useState("");
     const { sido, sigugun, dong } = hangjungdong;
+
+    function sendData(){
+      props.setLocation(val1+val2+val3);
+    }
 
     return (
       <div>
@@ -64,6 +68,7 @@ function Location() {
           rounded
           onClick={() => {
             navigate("/piegraph");
+            sendData();
           }}
         />
         <Outlet></Outlet>
