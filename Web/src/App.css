@@ -177,7 +177,8 @@ option {
 
 .nextBtn {
   width: 40%;
-  text-align: center;
+  text-align: left;
+  padding-left: 120px;
 }
 
 
