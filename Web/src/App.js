@@ -25,7 +25,10 @@ function App() {
           path="/location"
           element={<Location setLocation={setLocation} />}
         ></Route>
-        <Route path="/piegraph" element={<Piegraph />}></Route>
+        <Route
+          path="/piegraph"
+          element={<Piegraph location={location} />}
+        ></Route>
         <Route path="/map" element={<Map />}></Route>
 
         <Route path="*" element={<div>404</div>}></Route>
