@@ -3,6 +3,9 @@ import ReactiveButton from "reactive-button";
 import { useState } from "react";
 import { hangjungdong } from "./Hangjungdong";
 import { useNavigate, Outlet } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
+
 
 function Location(props) {
     let navigate = useNavigate();
@@ -17,7 +20,18 @@ function Location(props) {
     }
 
     return (
-      <div>
+      <div className="location-wrap">
+        <div className="loc-title-container">
+          <h2 className="location-title">
+            <FontAwesomeIcon icon={faLocationDot} size="1x"/>
+            <span>지역을 선택해주세요.</span>
+          </h2>
+
+          <div className="location-subtitle">
+            확인 버튼을 눌러 지도에서 위치를 확인해보세요.
+          </div>
+        </div>
+
         <div className="select-container">
           <div className="select-address">
             <select onChange={(e) => setVal1(e.target.value)}>
@@ -55,23 +69,31 @@ function Location(props) {
                 ))}
             </select>
           </div>
+        </div>
+
+        <div className="location-map">
 
         </div>
         
-        <ReactiveButton
-          idleText="다음으로"
-          loadingText="Loading"
-          successText="Done"
-          color="blue"
-          size="large"
-          shadow
-          rounded
-          onClick={() => {
-            navigate("/piegraph");
-            sendData();
-          }}
-        />
+        <div className="nextBtn">
+          <ReactiveButton
+              idleText="확인"
+              loadingText="Loading"
+              successText="Done"
+              color="blue"
+              size="large"
+              shadow
+              rounded
+              onClick={() => {
+                navigate("/piegraph");
+                sendData();
+              }}
+            />
+        </div>
+        
         <Outlet></Outlet>
+
+        
       </div>
     );
 }
