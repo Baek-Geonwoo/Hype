@@ -29,11 +29,11 @@ function Footer() {
                     <div className="footer-git">
                         <div className="footer-subtitle">Github</div>
                         <div className="footer-subcontent">
-                            <Link to="https://github.com/Baek-Geonwoo/Hype" style={{ color: 'inherit', textDecoration: 'inherit'}}>
+                            <button onClick={() => window.open('https://github.com/Baek-Geonwoo/Hype', '_blank')}>
                                 <div className='footer-subicon'>
                                     <FontAwesomeIcon icon={faGithub} size="2x"/>
                                 </div>
-                            </Link>
+                            </button>   
                         </div>
                     </div> 
                 </div>
