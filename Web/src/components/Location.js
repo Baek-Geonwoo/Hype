@@ -34,7 +34,8 @@ function Location(props) {
     }
 
     function sendData(){
-      props.setLocation(loc1+" "+loc2+" "+loc3);
+      props.setLocationText(loc1+" "+loc2+" "+loc3);
+      props.setLocationCode(val1+val2+val3);
     }
 
     return (

@@ -10,8 +10,9 @@ import Footer from "./components/Footer";
 import React, { useState } from "react";
 
 function App() {
-  const [location, setLocation] = useState("");
-  console.log(location);
+  const [locationText, setLocationText] = useState("");
+  const [locationCode, setLocationCode] = useState("");
+  
   return (
     <div className="App">
       <Header></Header>
@@ -23,11 +24,11 @@ function App() {
         <Route path="/service" element={<Service />}></Route>
         <Route
           path="/location"
-          element={<Location setLocation={setLocation} />}
+          element={<Location setLocationText={setLocationText} setLocationCode={setLocationCode} />}
         ></Route>
         <Route
           path="/piegraph"
-          element={<Piegraph location={location} />}
+          element={<Piegraph locationText={locationText} locationCode={locationCode} />}
         ></Route>
         <Route path="/map" element={<Map />}></Route>
 
