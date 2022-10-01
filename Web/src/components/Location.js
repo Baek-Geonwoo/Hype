@@ -1,5 +1,6 @@
 import React from "react";
 import ReactiveButton from "reactive-button";
+import KakaoMap from "./KakaoMap";
 import { useState } from "react";
 import { hangjungdong } from "./Hangjungdong";
 import { useNavigate, Outlet } from "react-router-dom";
@@ -49,72 +50,75 @@ function Location(props) {
           </div>
         </div>
 
-        <div className="select-container">
-          <div className="select-address">
-            <select id="sido" onChange={(e) => {
-              setVal1(e.target.value)
-              selectText()
-              }}>
-              <option value="">선택</option>
-              {sido.map((el) => (
-                <option key={el.sido} value={el.sido}>
-                  {el.codeNm}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="select-address">     
-            <select id="sigugun" onChange={(e) => {
-              setVal2(e.target.value)
-              selectText()
-              }}>
-              <option value="">선택</option>
-              {sigugun
-                .filter((el) => el.sido === val1)
-                .map((el) => (
-                  <option key={el.sigugun} value={el.sigugun}>
+        <div className="location-container">
+          <div className="select-container">
+            <div className="select-address">
+              <select id="sido" onChange={(e) => {
+                setVal1(e.target.value)
+                selectText()
+                }}>
+                <option value="">선택</option>
+                {sido.map((el) => (
+                  <option key={el.sido} value={el.sido}>
                     {el.codeNm}
                   </option>
                 ))}
-            </select>
+              </select>
+            </div>
+
+            <div className="select-address">     
+              <select id="sigugun" onChange={(e) => {
+                setVal2(e.target.value)
+                selectText()
+                }}>
+                <option value="">선택</option>
+                {sigugun
+                  .filter((el) => el.sido === val1)
+                  .map((el) => (
+                    <option key={el.sigugun} value={el.sigugun}>
+                      {el.codeNm}
+                    </option>
+                  ))}
+              </select>
+            </div>
+
+            <div className="select-address">
+              <select id="dong" onChange={(e) => {
+                setVal3(e.target.value)
+                selectText()
+                }}>
+                <option value="">선택</option>
+                {dong
+                  .filter((el) => el.sido === val1 && el.sigugun === val2)
+                  .map((el) => (
+                    <option key={el.dong} value={el.dong}>
+                      {el.codeNm}
+                    </option>
+                  ))}
+              </select>
+            </div>
+
+            <div className="nextBtn">
+              <ReactiveButton
+                idleText="확인"
+                loadingText="Loading"
+                successText="Done"
+                color="blue"
+                size="large"
+                shadow
+                rounded
+                onClick={() => {
+                  navigate("/piegraph");
+                  sendData();
+                }}
+              />
+            </div>
+
           </div>
 
-          <div className="select-address">
-            <select id="dong" onChange={(e) => {
-              setVal3(e.target.value)
-              selectText()
-              }}>
-              <option value="">선택</option>
-              {dong
-                .filter((el) => el.sido === val1 && el.sigugun === val2)
-                .map((el) => (
-                  <option key={el.dong} value={el.dong}>
-                    {el.codeNm}
-                  </option>
-                ))}
-            </select>
-          </div>
-        </div>
-
-        <div className="location-map">
-
-        </div>
-        
-        <div className="nextBtn">
-          <ReactiveButton
-              idleText="확인"
-              loadingText="Loading"
-              successText="Done"
-              color="blue"
-              size="large"
-              shadow
-              rounded
-              onClick={() => {
-                navigate("/piegraph");
-                sendData();
-              }}
-            />
+          <div className="location-map">
+            <KakaoMap></KakaoMap>
+          </div>  
         </div>
         
         <Outlet></Outlet>
@@ -122,6 +126,7 @@ function Location(props) {
         
       </div>
     );
+
 }
 
 export default Location;

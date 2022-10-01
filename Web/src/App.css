@@ -145,6 +145,7 @@ body {
 .location-wrap {
   width: 100%;
   padding: 50px 0px 200px 0px;
+
 }
 
 .loc-title-container {
@@ -165,6 +166,11 @@ body {
   padding-left: 30px;
   font-size: var(--font-medium);
   color: var(--dark-gray);
+}
+
+.location-container {
+  width: 100%;
+  display: flex;
 }
 
 select {
@@ -201,7 +207,7 @@ option {
 .nextBtn {
   width: 40%;
   text-align: left;
-  padding-left: 120px;
+  padding: 50px 0px 0px 20px;
 }
 
 
