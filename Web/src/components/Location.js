@@ -7,7 +7,6 @@ import { useNavigate, Outlet } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 
-
 function Location(props) {
     let navigate = useNavigate();
 
@@ -17,6 +16,7 @@ function Location(props) {
     const [loc1, setLoc1] = useState("");
     const [loc2, setLoc2] = useState("");
     const [loc3, setLoc3] = useState("");
+    const [place, setPlace] = useState("");
     const { sido, sigugun, dong } = hangjungdong;
 
     function selectText() {
@@ -31,6 +31,7 @@ function Location(props) {
       setLoc1(sidoText);
       setLoc2(sigugunText);
       setLoc3(dongText);
+      setPlace(sidoText+" "+sigugunText+" "+dongText);
     }
 
     function sendData(){
@@ -56,7 +57,6 @@ function Location(props) {
             <div className="select-address">
               <select id="sido" onChange={(e) => {
                 setVal1(e.target.value)
-                selectText()
                 }}>
                 <option value="">선택</option>
                 {sido.map((el) => (
@@ -70,7 +70,6 @@ function Location(props) {
             <div className="select-address">     
               <select id="sigugun" onChange={(e) => {
                 setVal2(e.target.value)
-                selectText()
                 }}>
                 <option value="">선택</option>
                 {sigugun
@@ -118,7 +117,7 @@ function Location(props) {
           </div>
 
           <div className="location-map">
-            <KakaoMap></KakaoMap>
+            {place && <KakaoMap location={place}></KakaoMap>}
           </div>  
         </div>
         
