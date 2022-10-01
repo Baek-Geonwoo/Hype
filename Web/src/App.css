@@ -27,16 +27,16 @@ body {
 
 .inverted-border-radius {
   padding: 5%;
-  font-size: var(--font-small);
+  font-size: var(--font-medium);
   height: 70px;
-  width: 270px;
-  margin-top: 50px;
+  width: 400px;
+  margin-top: 20px;
   background-color: #E7F2FF;
   border-radius: 25px 25px 25px 0; 
 }
 
 .inner_box {
-  margin-right: 5px;
+  margin: 5px;
   font-size: var(--font-small);
   height: 20px;
   width: 50px;
