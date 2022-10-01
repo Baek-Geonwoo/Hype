@@ -142,33 +142,33 @@ body {
 }
 
 
-.location-wrap {
+.location-wrap, .map-wrap {
   width: 100%;
   padding: 50px 0px 200px 0px;
 
 }
 
-.loc-title-container {
+.loc-title-container, .map-title-container {
   width: 100%;
   padding: 0px 0px 10px 100px;
 }
 
-.location-title {
+.location-title, .map-title {
   font-weight: bold;
   color: var(--black);
 }
 
-.location-title span {
+.location-title span, .map-title span {
   padding-left: 10px;
 }
 
-.location-subtitle {
+.location-subtitle{
   padding-left: 30px;
   font-size: var(--font-medium);
   color: var(--dark-gray);
 }
 
-.location-container {
+.location-container, .map-container {
   width: 100%;
   display: flex;
 }
@@ -210,6 +210,16 @@ option {
   padding: 50px 0px 0px 20px;
 }
 
+.replayBtn {
+  width: 100%;
+  text-align: right;
+  padding-right: 30px;
+}
+
+.map-map {
+  width: 70%;
+  padding: 10px 10px 50px 100px;
+}
 
 /* footer에 관한 css */
 footer {

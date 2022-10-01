@@ -30,7 +30,10 @@ function App() {
           path="/piegraph"
           element={<Piegraph locationText={locationText} locationCode={locationCode} />}
         ></Route>
-        <Route path="/map" element={<Map />}></Route>
+        <Route 
+          path="/map" 
+          element={<Map locationText={locationText} />}
+        ></Route>
 
         <Route path="*" element={<div>404</div>}></Route>
       </Routes>

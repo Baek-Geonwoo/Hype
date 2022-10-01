@@ -1,25 +1,48 @@
 import React from "react";
+import DispersionMap from "./DispersionMap";
 import ReactiveButton from "reactive-button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Outlet } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMap } from '@fortawesome/free-regular-svg-icons'
 
-function Map() {
+function Map(props) {
     let navigate = useNavigate();
   
     return (
-      <div>
-        Map
-        <ReactiveButton
-          idleText="처음으로"
-          loadingText="Loading"
-          successText="Done"
-          color="blue"
-          size="large"
-          shadow
-          rounded
-          onClick={() => {
-            navigate("/location");
-          }}
-        />
+      <div className="map-wrap">
+        
+        <div className="map-title-container">
+          <h2 className="map-title">
+            <FontAwesomeIcon icon={faMap} size="1x"/>
+            <span>{props.locationText} 의 상권 분포</span>
+          </h2>
+        </div>
+
+        <div className="map-container">
+          
+        </div>
+
+        <div className="map-map">
+          <DispersionMap></DispersionMap>
+        </div>  
+      
+        <div className="replayBtn">
+          <ReactiveButton
+            idleText="처음으로"
+            loadingText="Loading"
+            successText="Done"
+            color="blue"
+            size="large"
+            shadow
+            rounded
+            onClick={() => {
+              navigate("/location");
+            }}
+          />
+        </div>
+        <Outlet></Outlet>
+        
+        
       </div>
     );
 }
