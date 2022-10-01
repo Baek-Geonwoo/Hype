@@ -13,10 +13,27 @@ function Location(props) {
     const [val1, setVal1] = useState("");
     const [val2, setVal2] = useState("");
     const [val3, setVal3] = useState("");
+    const [loc1, setLoc1] = useState("");
+    const [loc2, setLoc2] = useState("");
+    const [loc3, setLoc3] = useState("");
     const { sido, sigugun, dong } = hangjungdong;
 
+    function selectText() {
+      let sidoSelect = document.getElementById("sido");
+      let sigugunSelect = document.getElementById("sigugun");
+      let dongSelect = document.getElementById("dong");
+
+      let sidoText = sidoSelect.options[sidoSelect.selectedIndex].text;
+      let sigugunText = sigugunSelect.options[sigugunSelect.selectedIndex].text;
+      let dongText = dongSelect.options[dongSelect.selectedIndex].text;
+
+      setLoc1(sidoText);
+      setLoc2(sigugunText);
+      setLoc3(dongText);
+    }
+
     function sendData(){
-      props.setLocation(val1+val2+val3);
+      props.setLocation(loc1+" "+loc2+" "+loc3);
     }
 
     return (
@@ -34,7 +51,10 @@ function Location(props) {
 
         <div className="select-container">
           <div className="select-address">
-            <select onChange={(e) => setVal1(e.target.value)}>
+            <select id="sido" onChange={(e) => {
+              setVal1(e.target.value)
+              selectText()
+              }}>
               <option value="">선택</option>
               {sido.map((el) => (
                 <option key={el.sido} value={el.sido}>
@@ -45,7 +65,10 @@ function Location(props) {
           </div>
 
           <div className="select-address">     
-            <select onChange={(e) => setVal2(e.target.value)}>
+            <select id="sigugun" onChange={(e) => {
+              setVal2(e.target.value)
+              selectText()
+              }}>
               <option value="">선택</option>
               {sigugun
                 .filter((el) => el.sido === val1)
@@ -58,7 +81,10 @@ function Location(props) {
           </div>
 
           <div className="select-address">
-            <select onChange={(e) => setVal3(e.target.value)}>
+            <select id="dong" onChange={(e) => {
+              setVal3(e.target.value)
+              selectText()
+              }}>
               <option value="">선택</option>
               {dong
                 .filter((el) => el.sido === val1 && el.sigugun === val2)
