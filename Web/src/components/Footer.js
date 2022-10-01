@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
@@ -28,9 +29,11 @@ function Footer() {
                     <div className="footer-git">
                         <div className="footer-subtitle">Github</div>
                         <div className="footer-subcontent">
-                            <div className='footer-subicon'>
-                                <FontAwesomeIcon icon={faGithub} size="2x"/>
-                            </div>
+                            <Link to="https://github.com/Baek-Geonwoo/Hype" style={{ color: 'inherit', textDecoration: 'inherit'}}>
+                                <div className='footer-subicon'>
+                                    <FontAwesomeIcon icon={faGithub} size="2x"/>
+                                </div>
+                            </Link>
                         </div>
                     </div> 
                 </div>
