@@ -168,7 +168,7 @@ body {
   color: var(--dark-gray);
 }
 
-.location-container, .map-container {
+.location-container {
   width: 100%;
   display: flex;
 }
@@ -219,6 +219,39 @@ option {
 .map-map {
   width: 70%;
   padding: 10px 10px 50px 100px;
+}
+
+.map-content {
+  width: 100%;
+  display: flex;
+}
+
+.map-container h4 {
+  width: 100%;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-left: 5px;
+}
+
+.map-container {
+  width: 100%;
+}
+
+.map-container div span {
+  font-size: var(--font-medium);
+  padding-left: 10px;
+}
+
+.map-container #circle1 {
+  color: red;
+}
+
+.map-container #circle2 {
+  color: blue;
+}
+
+.map-container #circle3 {
+  color: green;
 }
 
 /* footer에 관한 css */
