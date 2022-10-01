@@ -1,0 +1,265 @@
+:root {
+  /* Color */
+  --white: rgb(149, 149, 149);
+  --black: #0a0a0a;
+  --navy: rgb(6, 36, 87);
+  --gray: rgb(204, 204, 204);
+  --light-gray: rgb(242, 242, 242);
+  --dark-gray: rgb(134, 134, 134);
+
+  /* Size */
+  --padding: 12px;
+  --avatar-size: 36px;
+
+  /* Font Size */
+  --font-larger: 36px;
+  --font-large: 24px;
+  --font-semi-medium: 20px;
+  --font-medium: 16px;
+  --font-small: 12px;
+}
+
+
+
+body {
+  margin: 0;
+}
+
+.inverted-border-radius {
+  padding: 5%;
+  font-size: var(--font-small);
+  height: 70px;
+  width: 270px;
+  margin-top: 50px;
+  background-color: #E7F2FF;
+  border-radius: 25px 25px 25px 0; 
+}
+
+.inner_box {
+  margin-right: 5px;
+  font-size: var(--font-small);
+  height: 20px;
+  width: 50px;
+  background-color: white;
+  border-radius: 25px 25px 25px 25px; 
+}
+
+
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.jb-bold{
+        font-weight: bold;
+
+}
+
+
+.startButton{
+  margin-top: 20px;
+  margin-left: 120px;
+  float : left;
+}
+
+.fadein{
+  font-size: medium;
+  position: relative;
+  overflow: hidden;
+  animation: fadein 4s ease-in-out;
+  text-align :left;
+  margin-left :120px;
+  margin-top: 50px;
+}
+
+
+@keyframes fadein{
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+
+.intro-wrap {
+  width: 100%;
+  height: 700px;
+  background-image: url(./img/butterfly.png);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.intro-container {
+  font-size: medium;
+  position: relative;
+  overflow: hidden;
+  animation: fadein 4s ease-in-out;
+  text-align :left;
+  margin-left :120px;
+  padding-top: 100px;
+}
+
+.intro-title {
+  font-weight: bold;
+  padding-bottom: 30px;
+}
+
+
+.location-wrap {
+  width: 100%;
+  padding: 50px 0px 200px 0px;
+}
+
+.loc-title-container {
+  width: 100%;
+  padding: 0px 0px 10px 100px;
+}
+
+.location-title {
+  font-weight: bold;
+  color: var(--black);
+}
+
+.location-title span {
+  padding-left: 10px;
+}
+
+.location-subtitle {
+  padding-left: 30px;
+  font-size: var(--font-medium);
+  color: var(--dark-gray);
+}
+
+select {
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+  font-size: var(--font-semi-medium);
+  font-weight: bold;
+  border: none;
+  border-radius: 5%;
+}
+
+option {
+  font-size: var(--font-semi-medium);
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+}
+
+.select-container {
+  width: 40%;
+  padding: 10px 10px 50px 100px;
+}
+
+.location-map {
+  width: 60%;
+}
+
+.select-address {
+  padding: 10px;
+}
+
+.nextBtn {
+  width: 40%;
+  text-align: left;
+  padding-left: 120px;
+}
+
+
+/* footer에 관한 css */
+footer {
+  width: 100%;
+  height: 220px;
+  position: absolute;
+  clear: left;
+  float: left;
+  left: 0;
+  bottom: 0px;
+  color: var(--gray);
+  background-color: var(--navy);
+}
+
+footer .footer-container {
+  padding: 20px 20px 0px 30px;
+}
+
+footer .footer-title {
+  width: 100%;
+  height: 40px;
+  font-weight: bold;
+  font-size: var(--font-semi-medium);
+}
+
+footer .footer-content {
+  display: flex;
+  height: 130px;
+}
+
+footer .footer-about {
+  width: 40%;
+}
+
+footer .footer-contact {
+  width: 40%;
+}
+
+footer .footer-git {
+  width: 20%;
+}
+
+footer .footer-subtitle {
+  margin: 0px 0px 10px 0px;
+  font-weight: bold;
+  font-size: var(--font-medium);
+}
+
+footer .footer-subcontent {
+  padding: 0px 20px 0px 0px;
+  font-size: var(--font-small);
+}
+
+footer .footer-foot {
+  width: 100%;
+  height: 30px;
+  font-weight: bold;
+  font-size: var(--font-small);
+}
