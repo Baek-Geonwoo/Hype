@@ -19,20 +19,74 @@ function MapPage(props) {
 
   const positions = [
     {
-      title: "카카오",
-      latlng: { lat: 33.450705, lng: 126.570677 },
+      title: mapdata[index]["Top1"],
+      latlng: {
+        lat: mapdata[index]["Top1_1lat"],
+        lng: mapdata[index]["Top1_1lng"],
+      },
     },
     {
-      title: "생태연못",
-      latlng: { lat: 33.450936, lng: 126.569477 },
+      title: mapdata[index]["Top1"],
+      latlng: {
+        lat: mapdata[index]["Top1_2lat"],
+        lng: mapdata[index]["Top1_2lng"],
+      },
     },
     {
-      title: "텃밭",
-      latlng: { lat: 33.450879, lng: 126.56994 },
+      title: mapdata[index]["Top1"],
+      latlng: {
+        lat: mapdata[index]["Top1_3lat"],
+        lng: mapdata[index]["Top1_3lng"],
+      },
     },
     {
-      title: "근린공원",
-      latlng: { lat: 33.451393, lng: 126.570738 },
+      title: mapdata[index]["Top1"],
+      latlng: {
+        lat: mapdata[index]["Top1_4lat"],
+        lng: mapdata[index]["Top1_4lng"],
+      },
+    },
+    {
+      title: mapdata[index]["Top1"],
+      latlng: {
+        lat: mapdata[index]["Top1_5lat"],
+        lng: mapdata[index]["Top1_5lng"],
+      },
+    },
+    {
+      title: mapdata[index]["Top1"],
+      latlng: {
+        lat: mapdata[index]["Top1_6lat"],
+        lng: mapdata[index]["Top1_6lng"],
+      },
+    },
+    {
+      title: mapdata[index]["Top1"],
+      latlng: {
+        lat: mapdata[index]["Top1_7lat"],
+        lng: mapdata[index]["Top1_7lng"],
+      },
+    },
+    {
+      title: mapdata[index]["Top1"],
+      latlng: {
+        lat: mapdata[index]["Top1_8lat"],
+        lng: mapdata[index]["Top1_8lng"],
+      },
+    },
+    {
+      title: mapdata[index]["Top1"],
+      latlng: {
+        lat: mapdata[index]["Top1_9lat"],
+        lng: mapdata[index]["Top1_9lng"],
+      },
+    },
+    {
+      title: mapdata[index]["Top1"],
+      latlng: {
+        lat: mapdata[index]["Top1_10lat"],
+        lng: mapdata[index]["Top1_10lng"],
+      },
     },
   ];
 
@@ -50,15 +104,15 @@ function MapPage(props) {
           <Map // 지도를 표시할 Container
             center={{
               // 지도의 중심좌표
-              lat: 33.450701,
-              lng: 126.570667,
+              lat: mapdata[index]["Top1_1lat"],
+              lng: mapdata[index]["Top1_1lng"],
             }}
             style={{
               // 지도의 크기
               width: "100%",
               height: "450px",
             }}
-            level={3} // 지도의 확대 레벨
+            level={5} // 지도의 확대 레벨
           >
             {positions.map((position, index) => (
               <MapMarker
