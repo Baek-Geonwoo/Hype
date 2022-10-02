@@ -3,7 +3,7 @@ import ReactiveButton from "reactive-button";
 import { useNavigate } from "react-router-dom";
 import { ResponsivePie } from "@nivo/pie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faChartPie } from "@fortawesome/free-solid-svg-icons";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -128,7 +128,7 @@ function Piegraph(props) {
       <div style={{ marginTop: 50 }}>
         <div className="loc-title-container">
           <h2 className="location-title">
-            <FontAwesomeIcon icon={faLocationDot} size="1x" />
+            <FontAwesomeIcon icon={faChartPie} size="1x" />
             <span>{props.locationText} 의 상위 상권 분석</span>
           </h2>
         </div>
@@ -196,35 +196,34 @@ function Piegraph(props) {
           </Col>
         </Row>
       </Container>
-      <div>
-        <Container>
-          <ReactiveButton
-            idleText="이전"
-            loadingText="Loading"
-            successText="Done"
-            color="blue"
-            size="large"
-            shadow
-            rounded
-            onClick={() => {
-              navigate("/location");
-            }}
-          />
 
-          <ReactiveButton
-            idleText="다음"
-            loadingText="Loading"
-            successText="Done"
-            color="blue"
-            size="large"
-            shadow
-            rounded
-            onClick={() => {
-              navigate("/map");
-            }}
-          />
-        </Container>
-      </div>
+      <Container>
+        <ReactiveButton
+          idleText="이전"
+          loadingText="Loading"
+          successText="Done"
+          color="blue"
+          size="large"
+          shadow
+          rounded
+          onClick={() => {
+            navigate("/location");
+          }}
+        />
+
+        <ReactiveButton
+          idleText="다음"
+          loadingText="Loading"
+          successText="Done"
+          color="blue"
+          size="large"
+          shadow
+          rounded
+          onClick={() => {
+            navigate("/map");
+          }}
+        />
+      </Container>
     </>
   );
 }
