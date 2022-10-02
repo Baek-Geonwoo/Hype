@@ -5,14 +5,14 @@ import Header from "./components/Header";
 import Intro from "./components/Intro";
 import Location from "./components/Location";
 import Piegraph from "./components/Piegraph";
-import Map from "./components/Map";
+import MapPage from "./components/MapPage";
 import Footer from "./components/Footer";
 import React, { useState } from "react";
 
 function App() {
   const [locationText, setLocationText] = useState("");
   const [locationCode, setLocationCode] = useState("");
-  
+
   return (
     <div className="App">
       <Header></Header>
@@ -24,15 +24,24 @@ function App() {
         <Route path="/service" element={<Service />}></Route>
         <Route
           path="/location"
-          element={<Location setLocationText={setLocationText} setLocationCode={setLocationCode} />}
+          element={
+            <Location
+              setLocationText={setLocationText}
+              setLocationCode={setLocationCode}
+            />
+          }
         ></Route>
         <Route
           path="/piegraph"
-          element={<Piegraph locationText={locationText} locationCode={locationCode} />}
+          element={
+            <Piegraph locationText={locationText} locationCode={locationCode} />
+          }
         ></Route>
-        <Route 
-          path="/map" 
-          element={<Map locationText={locationText} />}
+        <Route
+          path="/map"
+          element={
+            <MapPage locationText={locationText} locationCode={locationCode} />
+          }
         ></Route>
 
         <Route path="*" element={<div>404</div>}></Route>
